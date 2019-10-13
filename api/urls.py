@@ -22,5 +22,5 @@ urlpatterns = urls_api + [
 if settings.DOCS:
     from rest_framework_swagger.views import get_swagger_view
 
-    schema_view = get_swagger_view(title="Mishteh API", patterns=urls_api, url="docs/")
+    schema_view = get_swagger_view(title="Mishteh API", patterns=urls_api)
     urlpatterns += [path("docs/", schema_view)]
