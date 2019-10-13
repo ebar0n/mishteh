@@ -51,7 +51,7 @@ class InvitationViewSet(mixins.DefaultCRUDPermissions, viewsets.ModelViewSet):
         if not serializer.is_valid():
             return Response({"errors": serializer.errors}, status.HTTP_400_BAD_REQUEST)
 
-        invitation.confirmed = False
+        invitation.confirmed = True
         invitation.message = serializer.data["message"]
         invitation.save(update_fields=["confirmed", "message", "updated_at"])
 
