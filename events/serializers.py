@@ -44,7 +44,7 @@ class InvitationSerializer(serializers.ModelSerializer):
         """
 
         model = models.Invitation
-        fields = ("uuid", "event", "detail", "guests", "confirmed", "message")
+        fields = ("uuid", "event", "detail", "guests", "confirmed")
 
 
 class EmptySerializer(serializers.Serializer):
