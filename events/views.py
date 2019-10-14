@@ -5,6 +5,8 @@ from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from rest_framework.filters import SearchFilter
 from rest_framework.response import Response
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 from events import mixins, models, serializers
 
@@ -55,7 +57,9 @@ class InvitationViewSet(mixins.DefaultCRUDPermissions, viewsets.ModelViewSet):
         invitation.message = serializer.data["message"]
         invitation.save(update_fields=["confirmed", "message", "updated_at"])
 
-        return Response({"message": _("Successful confirmation")})
+        return HttpResponseRedirect(
+            reverse("Invitations-detail", args=[str(invitation.uuid)])
+        )
 
     @action(
         detail=True,
@@ -78,4 +82,6 @@ class InvitationViewSet(mixins.DefaultCRUDPermissions, viewsets.ModelViewSet):
         invitation.message = serializer.data["message"]
         invitation.save(update_fields=["confirmed", "message", "updated_at"])
 
-        return Response({"message": _("We regret that you cannot attend")})
+        return HttpResponseRedirect(
+            reverse("Invitations-detail", args=[str(invitation.uuid)])
+        )

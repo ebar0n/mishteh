@@ -1,0 +1,30 @@
+{% extends "rest_framework/base.html" %}
+
+{% block title %}Mishteh{% endblock %}
+
+{% block branding %}
+    {% for breadcrumb_name, breadcrumb_url in breadcrumblist %}
+        {% if forloop.last %}
+            <a class='navbar-brand' rel="nofollow" href="{{ breadcrumb_url }}">Mishteh</a>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+
+{% block breadcrumbs %}
+    <ul class="breadcrumb breadcrumb2">
+
+    </ul>
+{% endblock %}
+
+{% block request_forms %}
+
+    {% for action_name, url in extra_actions.items %}
+        {% if forloop.first %}
+            <a class="btn btn-primary button-form js-tooltip" href="{{ url }}">{{ action_name }}</a>
+        {% endif %}
+
+        {% if forloop.last %}
+            <a class="btn btn-danger button-form js-tooltip" href="{{ url }}">{{ action_name }}</a>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
