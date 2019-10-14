@@ -4,9 +4,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="NONE,NOARCHIVE" />
+    <meta property="og:title" content="Mishteh - Boda de Edwar & Julieth" />
+    <meta property="og:type" content="website" />
+    {% for breadcrumb_name, breadcrumb_url in breadcrumblist %}
+        {% if forloop.last %}
+            <meta property="og:url" content="{{ breadcrumb_url }}" />
+        {% endif %}
+    {% endfor %}
+    <meta property="og:image" content="https://mishteh.herokuapp.com/static/rest_framework/img/background.jpg" />
 {% endblock %}
 
-{% block title %}Mishteh - Boda De Edwar & Julieth{% endblock %}
+{% block title %}Mishteh - Boda de Edwar & Julieth{% endblock %}
 
 {% block branding %}
     {% for breadcrumb_name, breadcrumb_url in breadcrumblist %}
