@@ -1,19 +1,28 @@
 {% extends "rest_framework/base.html" %}
 
-{% block title %}Mishteh{% endblock %}
+{% block meta %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="NONE,NOARCHIVE" />
+{% endblock %}
+
+{% block title %}Mishteh - Boda De Edwar & Julieth{% endblock %}
 
 {% block branding %}
     {% for breadcrumb_name, breadcrumb_url in breadcrumblist %}
         {% if forloop.last %}
-            <a class='navbar-brand' rel="nofollow" href="{{ breadcrumb_url }}">Mishteh</a>
+            <a class='navbar-brand' rel="nofollow" href="{{ breadcrumb_url }}">Mishteh: Boda De Edwar & Julieth</a>
         {% endif %}
     {% endfor %}
 {% endblock %}
 
 {% block breadcrumbs %}
-    <ul class="breadcrumb breadcrumb2">
-
+    <ul class="breadcrumb breadcrumb2 breadcrumb3">
+        <h4>El que halla esposa halla el bien, Y alcanza la benevolencia de Jehová.</h4>
     </ul>
+{% endblock %}
+
+{% block description %}
 {% endblock %}
 
 {% block request_forms %}
