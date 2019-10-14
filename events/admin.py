@@ -38,10 +38,19 @@ class EventAdmin(admin.ModelAdmin):
 
 @admin.register(models.Invitation)
 class InvitationAdmin(admin.ModelAdmin):
-    list_display = ("uuid", "event", "detail", "message", "guests", "confirmed", "url")
+    list_display = (
+        "uuid",
+        "event",
+        "detail",
+        "message",
+        "guests",
+        "confirmed",
+        "url",
+        "account",
+    )
     list_filter = ("event", "guests", "confirmed", "created_at", "updated_at")
     ordering = ("updated_at",)
-    search_fields = ("uuid", "detail", "message", "event__title")
+    search_fields = ("uuid", "detail", "message", "event__title", "event__email")
     readonly_fields = ("confirmed", "message")
 
     def url(self, obj):

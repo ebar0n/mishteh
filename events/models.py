@@ -28,6 +28,7 @@ class Event(models.Model):
 class Invitation(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    account = models.ForeignKey("accounts.Account", on_delete=models.CASCADE)
     detail = models.TextField(verbose_name=_("detail"))
     guests = models.PositiveSmallIntegerField(verbose_name=_("guests"))
     confirmed = models.BooleanField(default=False, verbose_name=_("confirmed"))
