@@ -70,6 +70,14 @@ ul.breadcrumb {
   background-color: #f7f7f900;
 }
 
+.breadcrumb3 {
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
 .pagination>.disabled>a,
 .pagination>.disabled>a:hover,
 .pagination>.disabled>a:focus {
@@ -201,8 +209,11 @@ footer a:hover {
 
 .page-header {
   border-bottom: none;
-  padding-bottom: 0px;
-  margin: 0;
+  padding: 30px 0px;
+  margin: auto;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 /* custom general page styles */
